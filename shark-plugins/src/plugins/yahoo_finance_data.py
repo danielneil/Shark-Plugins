@@ -4,4 +4,4 @@ url = 'https://query1.finance.yahoo.com/v7/finance/download/BTC-USD?period1=1597
 
 r = requests.get(url, allow_redirects=True)
 
-open('facebook.ico', 'wb').write(r.content)
+open('BTC-USD.csv', 'wb').write(r.content)
