@@ -41,6 +41,6 @@ start = datetime.datetime(2019,5,31)
 end = datetime.datetime(2020,5,30) 
 Amazon = yf.Ticker(args.ticker)
 
-with open("demofile2.txt", "a") as f:
+with open(args.ticker + ".df", "w") as f:
   f.write(Amazon.history(start=start, end=end) 
   f.close()
