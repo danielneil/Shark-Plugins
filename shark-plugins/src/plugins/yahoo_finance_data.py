@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import requests
 
 url = 'https://query1.finance.yahoo.com/v7/finance/download/BTC-USD?period1=1597883791&period2=1629419791&interval=1d&events=history&includeAdjustedClose=true'
