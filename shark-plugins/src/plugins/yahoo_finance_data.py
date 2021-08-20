@@ -21,26 +21,12 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=cmd_arg_help)
     parser.add_argument("-t", "--ticker", help="Ticker code of the stock.")
-    parser.add_argument("-startdate", "--startdate", help="Format YYYY,MM,DD")
-    parser.add_argument("-enddate", "--enddate", help="Format YYYY,MM,DD")
     args = parser.parse_args()
 
     if not args.ticker:
         print ("UNKNOWN - No ticker found")
         sys.exit(UNKNOWN)
         
-    if not args.startdate:
-        print ("UNKNOWN - No startdate entered")
-        sys.exit(UNKNOWN)
-        
-    if not args.enddate:
-        print ("UNKNOWN - No enddate entered")
-        sys.exit(UNKNOWN)
-  
-start = datetime.datetime(2019,5,31) 
-end = datetime.datetime(2020,5,30) 
-Amazon = yf.Ticker(args.ticker)
+dataFrame = yf.Ticker(args.ticker)
 
-with open(args.ticker + ".df", "w") as f:
-  f.write(Amazon.history(start=start, end=end) 
-  f.close()
+dataFrame.history(peroid="max").to_csv("ticker.csv")
