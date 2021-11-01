@@ -15,7 +15,9 @@ WARNING      = 1
 CRITICAL     = 2
 UNKNOWN      = 3
 
-DATA_DIR = "/shark/cache/historical_data"
+DATA_DIR = "/shark/cache"
+
+https://query1.finance.yahoo.com/v7/finance/download/BTC-USD?period1=1604262454&period2=1635798454&interval=1d&events=history&includeAdjustedClose=true
 
 if __name__ == "__main__":
 
