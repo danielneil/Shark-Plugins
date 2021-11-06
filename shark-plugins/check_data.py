@@ -12,7 +12,7 @@ WARNING      = 1
 CRITICAL     = 2
 UNKNOWN      = 3
 
-cmd_arg_help = 'This executes the strategy code. For a simple strategy, see the template for an example'
+cmd_arg_help = 'This executes the data code.'
 
 if __name__ == "__main__":
 
@@ -25,16 +25,12 @@ if __name__ == "__main__":
         print ("UNKNOWN - No ticker specified")
         sys.exit(UNKNOWN)
 
-    if not args.strategy:
-        print("UNKNOWN - No strategy file specified")
+    if not args.provider:
+        print("UNKNOWN - No provider specified")
         sys.exit(UNKNOWN)
 
     ticker = args.ticker 
-    strategyFile = args.strategy
-
-    if not os.path.isfile('/shark/strategies/' + strategyFile):
-        print ("UNKNOWN - Strategy file (" + strategyFile  + ") not found...")
-        sys.exit(UNKNOWN)
+    provider = args.provider
 
     process = subprocess.Popen(['/shark/strategies/' + strategyFile, '--ticker', ticker], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
 
