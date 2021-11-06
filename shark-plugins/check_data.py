@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=cmd_arg_help)
     parser.add_argument("-t", "--ticker", help="Ticker code of the stock in question")
-    parser.add_argument("-s", "--strategy", help="The file name of the custom strategy")
+    parser.add_argument("-s", "--provider", help="The file name of the custom strategy")
     args = parser.parse_args()
 
     if not args.ticker:
