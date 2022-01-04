@@ -1,0 +1,6 @@
+---
+- name: Installing Shark Plugins
+  hosts: shark-server
+  become: true
+  roles:
+  - shark-plugins
