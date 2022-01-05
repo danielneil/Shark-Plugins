@@ -1,16 +1,12 @@
 ---
-- name: Installing sma role
-  include_role:
-   name: sma
+- name: Shark - Installing Plugins
+  hosts: shark_server
+  gather_facts: yes
+  strategy: free
+  become: true
 
-- name: Installing backtest role
-  include_role:
-   name: backtest 
-
-- name: Installing strategy role
-  include_role:
-   name: strategy
-
-- name: Install yahoo_finance_data
-  include_role:
-   name: yahoo_finance_data
+  roles:
+  - sma
+  - backtest 
+  - strategy
+  - yahoo_finance_data
