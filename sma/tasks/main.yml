@@ -5,6 +5,7 @@
   copy:
    src: sma.py
    dest: /usr/lib64/nagios/plugins/
+   mode: '755'
    
 - name: Installing command definition - sma.py
   copy:
