@@ -48,7 +48,7 @@ if __name__ == "__main__":
     includeAdjustedClose = args.includeAdjustedClose
     
     
-    url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+includeAdjustedClose
+    url = 'https://query1.finance.yahoo.com/v7/finance/download/'+str(ticker)+'?period1='+str(period1)+'&period2='+str(period2)+'&interval='+str(interval)+'&events=history&includeAdjustedClose='+str(includeAdjustedClose)
     print(url)
     
     #urllib.request.urlretrieve(url, "/shark/historical/yahoo_finance/" + ticker)
