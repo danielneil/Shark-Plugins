@@ -1,2 +1,8 @@
 ---
 # tasks file for sma
+
+- name: installing plugin
+  copy:
+   name: 
+   pwd
+   c
