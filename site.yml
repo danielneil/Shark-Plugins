@@ -1,5 +1,10 @@
 ---
-- name: Shark - Installing Plugins
+- name: Shark - Installing Generic Nagios Plugins
+  package:
+    name: nagios-plugins-all.x86_64
+    state: latest
+
+- name: Shark - Installing Shark Plugins
   hosts: shark_server
   gather_facts: yes
   strategy: free
