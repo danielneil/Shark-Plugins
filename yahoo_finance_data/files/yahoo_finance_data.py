@@ -47,7 +47,10 @@ if __name__ == "__main__":
     interval = args.interval
     includeAdjustedClose = args.includeAdjustedClose
     
+    
     url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+includeAdjustedClose
-    urllib.request.urlretrieve(url, "/shark/historical/yahoo_finance/" + ticker)
+    print(url)
+    
+    #urllib.request.urlretrieve(url, "/shark/historical/yahoo_finance/" + ticker)
 
     sys.exit(OK)
