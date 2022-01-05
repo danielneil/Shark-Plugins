@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import pandas as pd
 import datetime
 import subprocess
 import os
@@ -17,25 +16,17 @@ cmd_arg_help = 'This executes the data code.'
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=cmd_arg_help)
-    parser.add_argument("-t", "--ticker", help="Ticker code of the stock in question")
-    parser.add_argument("-s", "--provider", help="The file name of the custom strategy")
+    parser.add_argument("-t", "--ticker", help="Ticker code of the desired instrument")
     args = parser.parse_args()
 
     if not args.ticker:
         print ("UNKNOWN - No ticker specified")
         sys.exit(UNKNOWN)
 
-    if not args.provider:
-        print("UNKNOWN - No provider specified")
-        sys.exit(UNKNOWN)
-
     ticker = args.ticker 
-    provider = args.provider
 
-    process = subprocess.Popen(['/shark/strategies/' + strategyFile, '--ticker', ticker], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
 
-    stdout, stderr = process.communicate()
-
+    
     exitcode = process.wait()
 
     print(stdout)
