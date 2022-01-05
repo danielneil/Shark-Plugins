@@ -1,6 +1,4 @@
 ---
-
-
 - name: Installing sma role
   include_role:
    name: sma
