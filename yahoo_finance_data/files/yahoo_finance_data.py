@@ -8,7 +8,7 @@ WARNING      = 1
 CRITICAL     = 2
 UNKNOWN      = 3
 
-cmd_arg_help = 'This executes the data code.'
+cmd_arg_help = 'This obtains historical instrument data from yahoo finance.'
 
 if __name__ == "__main__":
 
@@ -24,4 +24,4 @@ if __name__ == "__main__":
 
 
  
-    sys.exit(exitcode)
+    sys.exit(OK)
