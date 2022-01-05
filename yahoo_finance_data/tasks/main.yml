@@ -1,2 +1,12 @@
 ---
-# tasks file for yahoo_finance_data
+# tasks file for sma
+
+- name: Installing plugin - check_yahoo_finance_data.py
+  copy:
+   src: check_yahoo_finance_data.py
+   dest: /usr/lib64/nagios/plugins/
+   
+- name: Installing command definition - check_yahoo_finance_data.cfg
+  copy:
+   src: check_yahoo_finance_data.cfg
+   dest: /usr/local/nagios/etc/conf.d/
