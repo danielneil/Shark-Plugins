@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     ticker = args.ticker 
 
-    dataFile = urllib2.urlopen("https://query1.finance.yahoo.com/v7/finance/download/BTC-USD?period1=1609831036&period2=1641367036&interval=1d&events=history&includeAdjustedClose=true")
+    dataFile = urllib3.urlopen("https://query1.finance.yahoo.com/v7/finance/download/BTC-USD?period1=1609831036&period2=1641367036&interval=1d&events=history&includeAdjustedClose=true")
     
     with open('/shark/historical/yahoo_finance/BTC-USD','wb') as output:
         output.write(dataFile.read())
