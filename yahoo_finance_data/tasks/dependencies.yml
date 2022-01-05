@@ -1,0 +1,5 @@
+---
+- name: Installing python
+  package:
+   name: python3
+   state: latest
