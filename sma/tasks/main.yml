@@ -1,12 +1,12 @@
 ---
 # tasks file for sma
 
-- name: Installing plugin - check_sma.py
+- name: Installing plugin - sma.py
   copy:
-   src: check_sma.py
+   src: sma.py
    dest: /usr/lib64/nagios/plugins/
    
-- name: Installing command definition - check_sma.py
+- name: Installing command definition - sma.py
   copy:
-   src: check_sma.cfg
+   src: sma.cfg
    dest: /usr/local/nagios/etc/conf.d/
