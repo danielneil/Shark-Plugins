@@ -1,2 +1,12 @@
 ---
 # tasks file for backtest
+
+- name: Installing plugin - backtest.py
+  copy:
+   src: backtest.py
+   dest: /usr/lib64/nagios/plugins/
+   
+- name: Installing command definition - backtest.py
+  copy:
+   src: backtest.cfg
+   dest: /usr/local/nagios/etc/conf.d/
