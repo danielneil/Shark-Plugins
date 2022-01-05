@@ -2,7 +2,7 @@
 
 import sys
 import argparse
-import urllib2
+import urllib3
 
 OK           = 0
 WARNING      = 1
