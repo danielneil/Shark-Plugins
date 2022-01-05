@@ -1,6 +1,8 @@
 ---
 # tasks file for sma
 
+- include: dependencies.yml
+
 - name: Installing plugin - yahoo_finance_data.py
   copy:
    src: yahoo_finance_data.py
