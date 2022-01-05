@@ -1,6 +1,18 @@
 ---
-- name: Installing Shark Plugins
-  hosts: shark-server
-  become: true
-  roles:
-  - shark-plugins
+
+
+- name: Installing sma role
+  include_role:
+   name: sma
+
+- name: Installing backtest role
+  include_role:
+   name: backtest 
+
+- name: Installing strategy role
+  include_role:
+   name: strategy
+
+- name: Install yahoo_finance_data
+  include_role:
+   name: yahoo_finance_data
