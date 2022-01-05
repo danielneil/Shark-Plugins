@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-import datetime
-import subprocess
-import os
 import sys
 import argparse
 
@@ -26,9 +23,5 @@ if __name__ == "__main__":
     ticker = args.ticker 
 
 
-    
-    exitcode = process.wait()
-
-    print(stdout)
-
+ 
     sys.exit(exitcode)
