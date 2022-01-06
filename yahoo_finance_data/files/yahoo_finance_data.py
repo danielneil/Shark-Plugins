@@ -57,26 +57,31 @@ if __name__ == "__main__":
     except urllib.error.ContentTooShortError as shortError:
         print("Error: Content too short error")
         print("URL: " + str(url))
+        print(args)
         sys.exit(UNKNOWN)
         
     except urllib.error.HTTPError as e:
         print(e)
         print("URL: " + str(url))
+        print(args)     
         sys.exit(UNKNOWN)
         
     except urllib.error.URLError as ue: # such as timeout  
         print("Error: fail to download!")
         print("URL: " + str(url))
+        print(args)
         sys.exit(UNKNOWN)
         
     except socket.timeout as se: # very important            
         print("Error: socket timeout")
         print("URL: " + str(url))
+        print(args)
         sys.exit(UNKNOWN)
                  
     except Exception as ee:                
         print(ee)    
         print("URL: " + str(url))
+        print(args)
         sys.exit(UNKNOWN)
     
     print("Downloaded historical data file for " + str(ticker))
