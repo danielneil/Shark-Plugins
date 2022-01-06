@@ -55,19 +55,16 @@ if __name__ == "__main__":
         urllib.request.urlretrieve(url, datafile)
         
     except urllib.error.ContentTooShortError as shortError:
-        
         print("Error: Content too short error")
         print("URL: " + str(url))
         sys.exit(UNKNOWN)
         
     except urllib.error.HTTPError as e:
-        
         print(e)
         print("URL: " + str(url))
         sys.exit(UNKNOWN)
         
-    except urllib.error.URLError as ue: # such as timeout
-        
+    except urllib.error.URLError as ue: # such as timeout  
         print("Error: fail to download!")
         print("URL: " + str(url))
         sys.exit(UNKNOWN
@@ -78,8 +75,7 @@ if __name__ == "__main__":
         print("URL: " + str(url))
         sys.exit(UNKNOWN)
                  
-    except Exception as ee:
-                 
+    except Exception as ee:                
         print(ee)    
         print("URL: " + str(url))
         sys.exit(UNKNOWN)
