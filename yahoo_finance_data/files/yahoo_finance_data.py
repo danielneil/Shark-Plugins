@@ -69,8 +69,7 @@ if __name__ == "__main__":
         print("URL: " + str(url))
         sys.exit(UNKNOWN)
         
-    except socket.timeout as se: # very important
-                 
+    except socket.timeout as se: # very important            
         print("Error: socket timeout")
         print("URL: " + str(url))
         sys.exit(UNKNOWN)
