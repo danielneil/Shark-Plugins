@@ -18,7 +18,7 @@ if __name__ == "__main__":
     parser.add_argument("-p1", "--period1", help="Time peroid from")
     parser.add_argument("-p2", "--period2", help="Time peroid to")
     parser.add_argument("-i", "--interval", help="Time interval of the data")
-    parser.add_argument("-a", "--includeAdjustedClose", help="includeAdjustedClose [TRUE|FALSE] ")
+    parser.add_argument("-a", "--includeAdjustedClose", help="includeAdjustedClose")
     args = parser.parse_args()
 
     if not args.ticker:
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     includeAdjustedClose = args.includeAdjustedClose
     
     datafile =  "/shark/historical/yahoo_finance/" + str(ticker)
-    url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+includeAdjustedClose
+    url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+str(includeAdjustedClose)
     
     try:
         
