@@ -48,7 +48,7 @@ if __name__ == "__main__":
     includeAdjustedClose = args.includeAdjustedClose
     
     datafile =  "/shark/historical/yahoo_finance/" + str(ticker)
-    url = 'https://query1.finance.yahoo.com/v7/finance/download/'+str(ticker)+'?period1='+str(period1)+'&period2='+str(period2)+'&interval='+str(interval)+'&events=history&includeAdjustedClose='+str(includeAdjustedClose)
+    url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+includeAdjustedClose
     
     try:
         urllib.request.urlretrieve(url, datafile)
