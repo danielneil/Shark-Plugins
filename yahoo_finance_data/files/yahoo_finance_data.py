@@ -47,10 +47,31 @@ if __name__ == "__main__":
     interval = args.interval
     includeAdjustedClose = args.includeAdjustedClose
     
-    
+    datafile =  "/shark/historical/yahoo_finance/" + str(ticker)
     url = 'https://query1.finance.yahoo.com/v7/finance/download/'+str(ticker)+'?period1='+str(period1)+'&period2='+str(period2)+'&interval='+str(interval)+'&events=history&includeAdjustedClose='+str(includeAdjustedClose)
-    print(url)
     
-    #urllib.request.urlretrieve(url, "/shark/historical/yahoo_finance/" + ticker)
-
+    try:
+        urllib.request.urlretrieve(url, datafile)
+    except urllib.error.ContentTooShortError as shortError:
+        print("Error: Content too short error")
+        print("URL: " + str(url))
+        sys.exit(UNKNOWN)
+    except urllib.error.HTTPError as e:
+        print(e)
+        print("URL: " + str(url))
+        sys.exit(UNKNOWN)
+    except urllib.error.URLError as ue: # such as timeout
+        print("Error: fail to download!")
+        print("URL: " + str(url))
+        sys.exit(UNKNOWN)
+    except socket.timeout as se: # very important
+        print("Error: socket timeout")
+        print("URL: " + str(url))
+        sys.exit(UNKNOWN)
+    except Exception as ee:
+        print(ee)    
+        print("URL: " + str(url))
+        sys.exit(UNKNOWN)
+    
+    print("Downloaded historical data file for " + str(ticker))
     sys.exit(OK)
