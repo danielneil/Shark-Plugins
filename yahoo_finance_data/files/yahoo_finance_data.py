@@ -67,8 +67,8 @@ if __name__ == "__main__":
     except urllib.error.URLError as ue: # such as timeout  
         print("Error: fail to download!")
         print("URL: " + str(url))
-        sys.exit(UNKNOWN
-                 
+        sys.exit(UNKNOWN)
+        
     except socket.timeout as se: # very important
                  
         print("Error: socket timeout")
