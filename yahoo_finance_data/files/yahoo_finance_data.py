@@ -47,7 +47,7 @@ if __name__ == "__main__":
     interval = args.interval
     includeAdjustedClose = args.includeAdjustedClose
     
-    datafile =  "/shark/historical/yahoo_finance/" + str(ticker)
+    datafile =  "/shark/historical/yahoo_finance/" + str(ticker) + ".csv"
     url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+str(includeAdjustedClose)
     
     try:
