@@ -19,7 +19,6 @@ if __name__ == "__main__":
     parser.add_argument("-p2", "--period2", help="Time peroid to")
     parser.add_argument("-i", "--interval", help="Time interval of the data")
     parser.add_argument("-a", "--includeAdjustedClose", help="includeAdjustedClose [TRUE|FALSE] ")
-    parser.add_argument("-f", "--frequency", help="How frequently should the data be refreshed from the source")
     args = parser.parse_args()
 
     if not args.ticker:
@@ -42,16 +41,11 @@ if __name__ == "__main__":
         print ("UNKNOWN - No includeAdjustedClose specified")
         sys.exit(UNKNOWN) 
         
-    if not args.frequency:
-        print ("UNKNOWN - No frequency specified")
-        sys.exit(UNKNOWN) 
-        
     ticker = args.ticker 
     period1 = args.period1
     period2 = args.period2
     interval = args.interval
     includeAdjustedClose = args.includeAdjustedClose
-    frequency = args.frequency
     
     datafile =  "/shark/historical/yahoo_finance/" + str(ticker)
     url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+includeAdjustedClose
