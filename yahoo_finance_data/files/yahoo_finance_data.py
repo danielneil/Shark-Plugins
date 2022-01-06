@@ -51,24 +51,35 @@ if __name__ == "__main__":
     url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+includeAdjustedClose
     
     try:
+        
         urllib.request.urlretrieve(url, datafile)
+        
     except urllib.error.ContentTooShortError as shortError:
+        
         print("Error: Content too short error")
         print("URL: " + str(url))
         sys.exit(UNKNOWN)
+        
     except urllib.error.HTTPError as e:
+        
         print(e)
         print("URL: " + str(url))
         sys.exit(UNKNOWN)
+        
     except urllib.error.URLError as ue: # such as timeout
+        
         print("Error: fail to download!")
         print("URL: " + str(url))
-        sys.exit(UNKNOWN)
+        sys.exit(UNKNOWN
+                 
     except socket.timeout as se: # very important
+                 
         print("Error: socket timeout")
         print("URL: " + str(url))
         sys.exit(UNKNOWN)
+                 
     except Exception as ee:
+                 
         print(ee)    
         print("URL: " + str(url))
         sys.exit(UNKNOWN)
