@@ -18,7 +18,7 @@ if __name__ == "__main__":
     parser.add_argument("-p1", "--period1", help="Time peroid from")
     parser.add_argument("-p2", "--period2", help="Time peroid to")
     parser.add_argument("-i", "--interval", help="Time interval of the data")
-    parser.add_argument("-a", "--includeAdjustedClose", help="includeAdjustedClose")
+    parser.add_argument("-a", "--includeAdjustedClose", help="Include Adjusted Close")
     args = parser.parse_args()
 
     if not args.ticker:
