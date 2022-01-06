@@ -15,11 +15,11 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=cmd_arg_help)
     parser.add_argument("-t", "--ticker", help="Ticker code of the desired instrument")
-    parser.add_argument("-p1", "--period1", help="Data start date")
-    parser.add_argument("-p2", "--period2", help="Data end date")
+    parser.add_argument("-p1", "--period1", help="Time peroid from")
+    parser.add_argument("-p2", "--period2", help="Time peroid to")
     parser.add_argument("-i", "--interval", help="Time interval of the data")
     parser.add_argument("-a", "--includeAdjustedClose", help="includeAdjustedClose [TRUE|FALSE] ")
-    parser.add_argument("-f", "--frequency", help="How frequent should the data be refreshed from the source")
+    parser.add_argument("-f", "--frequency", help="How frequently should the data be refreshed from the source")
     args = parser.parse_args()
 
     if not args.ticker:
