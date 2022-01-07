@@ -71,6 +71,7 @@ if __name__ == "__main__":
     
     directory = "/shark/historical/yahoo_finance/" 
     datafile =  str(ticker) + ".csv"
+    filename = directory + datafile
     
     url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+str(includeAdjustedClose)
      
@@ -78,7 +79,7 @@ if __name__ == "__main__":
         
     try:
         
-        urllib.request.urlretrieve(url, str(directory + datafile))
+        urllib.request.urlretrieve(url, filename)
         
     except urllib.error.ContentTooShortError as shortError:
         print("Error: Content too short error")
@@ -106,7 +107,7 @@ if __name__ == "__main__":
         sys.exit(UNKNOWN)
     
     print("Downloaded historical data file for " + str(ticker))
-    print("File: " + directory + datafile)
+    print("File: " + filename)
     print("Size: " + os.path.getsize(filename))
     print("MTime: " + os.path.getmtime(filename))
     print("CTime: " + os.path.getctime(filename))
