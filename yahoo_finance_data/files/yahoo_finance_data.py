@@ -107,9 +107,5 @@ if __name__ == "__main__":
         sys.exit(UNKNOWN)
     
     print("Downloaded historical data file for " + str(ticker))
-    print("File: " + filename)
-    print("Size: " + os.path.getsize(filename))
-    print("MTime: " + os.path.getmtime(filename))
-    print("CTime: " + os.path.getctime(filename))
     
     sys.exit(OK)
