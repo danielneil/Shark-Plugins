@@ -44,23 +44,23 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if not args.ticker:
-        print ("UNKNOWN - No ticker specified")
+        print ("CRITICAL - No ticker specified")
         sys.exit(CRITICAL)
 
     if not args.period1:
-        print ("UNKNOWN - No period1 specified")
+        print ("CRITICAL - No period1 specified")
         sys.exit(CRITICAL)
         
     if not args.period2:
-        print ("UNKNOWN - No period2 specified")
+        print ("CRITICAL - No period2 specified")
         sys.exit(CRITICAL)
     
     if not args.interval:
-        print ("UNKNOWN - No interval specified")
+        print ("CRITICAL - No interval specified")
         sys.exit(CRITICAL) 
         
     if not args.includeAdjustedClose:
-        print ("UNKNOWN - No includeAdjustedClose specified")
+        print ("CRITICAL - No includeAdjustedClose specified")
         sys.exit(CRITICAL) 
         
     ticker = args.ticker 
