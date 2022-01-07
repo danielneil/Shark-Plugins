@@ -7,3 +7,5 @@ Plugins for Shark.
 ## sma
 
 ## backtest
+
+## strategy
