@@ -10,7 +10,7 @@ WARNING      = 1
 CRITICAL     = 2
 UNKNOWN      = 3
 
-cmd_arg_help = 'This obtains historical instrument data from yahoo finance.'
+cmd_arg_help = 'Obtains historical instrument data from yahoo finance and imports it into Shark.'
 
 ############################################################################
 # Checks if the historical data directory is writable.
