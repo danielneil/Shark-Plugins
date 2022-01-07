@@ -31,6 +31,8 @@ def is_dir_writable():
         sys.exit(CRITICAL) 
 
 
+############################################################################
+# Main
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=cmd_arg_help)
