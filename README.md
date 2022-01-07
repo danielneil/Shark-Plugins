@@ -6,25 +6,16 @@ These are the plugins to use with the Shark algorithmic trading platform.
 
 Obtains historical instrument data from Yahoo! finance and imports it into Shark.
 
+### Usage
+
 ```
-usage: yahoo_finance_data.py [-h] [-t TICKER] [-p1 PERIOD1] [-p2 PERIOD2]
-                             [-i INTERVAL] [-a INCLUDEADJUSTEDCLOSE]
-
-This obtains historical instrument data from yahoo finance.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -t TICKER, --ticker TICKER
-                        Ticker code of the desired instrument
-  -p1 PERIOD1, --period1 PERIOD1
-                        Time peroid from
-  -p2 PERIOD2, --period2 PERIOD2
-                        Time peroid to
-  -i INTERVAL, --interval INTERVAL
-                        Time interval of the data
-  -a INCLUDEADJUSTEDCLOSE, --includeAdjustedClose INCLUDEADJUSTEDCLOSE
-                        Include Adjusted Close
-
+  - name: yahoo_finance_data
+    desc: "Yahoo Finance [ BTC-USD Historical Data File ]"
+    group: "Yahoo Finance [ Historical Data ]"
+    period1: 1597479263
+    period2: 1629015263
+    interval: 1d
+    includeAdjustedClose: true
 ```
 
 ## sma
