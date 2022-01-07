@@ -12,6 +12,8 @@ UNKNOWN      = 3
 
 cmd_arg_help = 'This obtains historical instrument data from yahoo finance.'
 
+############################################################################
+# Checks if the historical data directory is writable.
 def is_dir_writable():
     
     # Test to see if the directory is writable.
@@ -41,23 +43,23 @@ if __name__ == "__main__":
 
     if not args.ticker:
         print ("UNKNOWN - No ticker specified")
-        sys.exit(UNKNOWN)
+        sys.exit(CRITICAL)
 
     if not args.period1:
         print ("UNKNOWN - No period1 specified")
-        sys.exit(UNKNOWN)
+        sys.exit(CRITICAL)
         
     if not args.period2:
         print ("UNKNOWN - No period2 specified")
-        sys.exit(UNKNOWN)
+        sys.exit(CRITICAL)
     
     if not args.interval:
         print ("UNKNOWN - No interval specified")
-        sys.exit(UNKNOWN) 
+        sys.exit(CRITICAL) 
         
     if not args.includeAdjustedClose:
         print ("UNKNOWN - No includeAdjustedClose specified")
-        sys.exit(UNKNOWN) 
+        sys.exit(CRITICAL) 
         
     ticker = args.ticker 
     period1 = args.period1
@@ -102,4 +104,5 @@ if __name__ == "__main__":
         sys.exit(UNKNOWN)
     
     print("Downloaded historical data file for " + str(ticker))
+    print("File: " + directory + datafile)
     sys.exit(OK)
