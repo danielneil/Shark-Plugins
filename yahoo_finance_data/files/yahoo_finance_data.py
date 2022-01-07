@@ -107,4 +107,8 @@ if __name__ == "__main__":
     
     print("Downloaded historical data file for " + str(ticker))
     print("File: " + directory + datafile)
+    print("Size: " + os.path.getsize(filename))
+    print("MTime: " + os.path.getmtime(filename))
+    print("CTime: " + os.path.getctime(filename))
+    
     sys.exit(OK)
