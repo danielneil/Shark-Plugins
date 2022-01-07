@@ -12,6 +12,23 @@ UNKNOWN      = 3
 
 cmd_arg_help = 'This obtains historical instrument data from yahoo finance.'
 
+def is_dir_writable():
+    
+    # Test to see if the directory is writable.
+    try:
+    
+        # open file in write mode
+        with open(directory + ".testfile", 'w') as f:
+            f.write('testing if writable')
+
+        os.remove(directory + ".testfile")
+        
+    except Exception as e:
+        print("Problem writing to " + directory)
+        print(e)
+        sys.exit(CRITICAL) 
+
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=cmd_arg_help)
@@ -52,21 +69,9 @@ if __name__ == "__main__":
     datafile =  str(ticker) + ".csv"
     
     url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+str(includeAdjustedClose)
-    
-    # Test to see if the directory is writable.
-    try:
-    
-        # open file in write mode
-        with open(directory + ".testfile", 'w') as f:
-            f.write('testing if writable')
-
-        os.remove(directory + ".testfile")
+     
+    is_dir_writable()    
         
-    except Exception as e:
-        print("Problem writing to " + directory)
-        print(e)
-        sys.exit(CRITICAL)
-    
     try:
         
         urllib.request.urlretrieve(url, str(directory + datafile))
