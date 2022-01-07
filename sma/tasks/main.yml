@@ -1,6 +1,8 @@
 ---
 # tasks file for sma
 
+- include: dependencies.yml
+
 - name: Installing plugin - sma.py
   copy:
    src: sma.py
