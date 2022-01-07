@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import os
 import sys
 import argparse
 import urllib.request
@@ -47,12 +48,28 @@ if __name__ == "__main__":
     interval = args.interval
     includeAdjustedClose = args.includeAdjustedClose
     
-    datafile =  "/shark/historical/yahoo_finance/" + str(ticker) + ".csv"
+    directory = "/shark/historical/yahoo_finance/" 
+    datafile =  str(ticker) + ".csv"
+    
     url = 'https://query1.finance.yahoo.com/v7/finance/download/'+ticker+'?period1='+period1+'&period2='+period2+'&interval='+interval+'&events=history&includeAdjustedClose='+str(includeAdjustedClose)
+    
+    # Test to see if the directory is writable.
+    try:
+    
+        # open file in write mode
+        with open(directory + ".testfile", 'w') as f:
+            f.write('testing if writable')
+
+        os.remove(directory + ".testfile")
+        
+    except Exception as e:
+        print("Problem writing to " + directory)
+        print(e)
+        sys.exit(CRITICAL)
     
     try:
         
-        urllib.request.urlretrieve(url, datafile)
+        urllib.request.urlretrieve(url, str(directory + datafile))
         
     except urllib.error.ContentTooShortError as shortError:
         print("Error: Content too short error")
