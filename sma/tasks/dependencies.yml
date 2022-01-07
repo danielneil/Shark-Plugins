@@ -8,3 +8,8 @@
   package:
    name: python3-pandas.x86_64
    state: latest
+
+- name: Installing python3-urllib3-1.24.2-5.el8.noarch
+  package:
+   name: python3-urllib3-1.24.2-5.el8.noarch
+   state: latest
