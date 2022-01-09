@@ -4,12 +4,8 @@
    name: python3
    state: latest
 
-- name: Installing python3-matplotlib
-  package:
-   name: python3-matplotlib
-   state: latest
-
-- name: Installing python3-pandas.x86_64
-  package:
-   name: python3-pandas.x86_64
-   state: latest
+- name: Install and upgrade pandas
+  pip:
+    name: pandas
+    extra_args: --upgrade
+    executable: pip3
