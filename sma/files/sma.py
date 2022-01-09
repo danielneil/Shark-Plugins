@@ -22,39 +22,50 @@ if __name__ == "__main__":
     parser.add_argument("-r", "--raw", nargs='?', const=1, type=int, help="Just print the price minus pretty output.")
     parser.add_argument("-max", "--max", help="Warn if the result is greater than this threshold.")
     parser.add_argument("-min", "--min", help="Warn if the result is less than this threshold.")
+    parser.add_argument("-f", "--provider", help="Which provider to the histocal data come from (e.g. yahoo_finance)")
     args = parser.parse_args()
 
     if not args.ticker:
-        print ("UNKNOWN - No ticker found")
-        sys.exit(UNKNOWN)
-
-    if not os.path.isfile('/shark/ticker-data/'+args.ticker+'.AX.txt'):
-        print ("UNKNOWN - Ticker data file not found, exit...")
-        sys.exit(UNKNOWN)
+        print ("CRITICAL - No ticker found")
+        sys.exit(CRITICAL)
 
     if not args.periods:
-        print ("UNKNOWN - Periods not supplied")
-        sys.exit(UNKNOWN)
+        print ("CRITICAL - Periods not supplied")
+        sys.exit(CRITICAL)
 
+    if not args.max:
+        print ("CRITICAL - Max not supplied")
+        sys.exit(CRITICAL)
+        
+    if not args.min:
+        print ("CRITICAL - Min not supplied")
+        sys.exit(CRITICAL)
+   
+    if not args.provider:
+        print ("CRITICAL - Data provider not supplied")
+        sys.exit(CRITICAL)
+        
     ticker = args.ticker
     smaPeriod = int(args.periods)
 
-    data = pd.read_csv('/shark/ticker-data/'+ticker+'.AX.txt')
+    history_dir = "/shark/historical/"
+
+    if args.provider == "yahoo_finance":
+        datafile = history_dir + args.provider
+        
+    data = pd.read_csv(datafile + "/" + ticker + ".csv")
     dataFrame = data['Adj Close']
     sma = np.round(dataFrame.rolling(smaPeriod).mean().iloc[-1], 2)
 
-    returnCode = OK
-
     if args.raw:
         print(str(sma))
+        sys.exit(OK)
     else:
         if args.max and int(args.max) <  sma:
             print("WARNING - SMA($" + str(sma) + ") is above threshold " + str(args.max))
-            returnCode = WARNING
+            sys.exit(WARNING)
         elif args.min and int(args.min) >  sma:
             print("WARNING - SMA($" + str(sma) + ") is below threshold " + str(args.min))
-            returnCode = WARNING
+            sys.exit(WARNING)
         else:
             print("OK - $" + str(sma))
-
-    sys.exit(returnCode)
