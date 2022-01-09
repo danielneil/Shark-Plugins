@@ -3,8 +3,3 @@
   package:
    name: python3
    state: latest
-
-- name: Installing python3-matplotlib.x86_64
-  package:
-   name: python3-matplotlib.x86_64
-   state: latest
