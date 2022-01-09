@@ -17,7 +17,14 @@ Obtains historical instrument data from Yahoo! finance and imports it into Shark
     includeAdjustedClose: true
 ```
 ## sma
-
+```
+  - name: sma
+    desc: "Simple Moving Average - 50 Days"
+    group: "SMA: [ 50 Day ]"
+    ticker: BTC-USD
+    period: 50
+    data_format: yahoo_finance_data
+```
 ## backtest
 
 ## strategy
