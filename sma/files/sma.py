@@ -12,7 +12,7 @@ WARNING      = 1
 CRITICAL     = 2
 UNKNOWN      = 3
 
-cmd_arg_help = "This plugin checks the simple moving average (SMA) for a stock. Based on the output, you can decide to set certain warning and critical threshold levels."
+cmd_arg_help = "This plugin checks the simple moving average (SMA) for a stock. Alerts Green (OK) if the share price is above the SMA, Yellow(Warning) if its below"
 
 if __name__ == "__main__":
 
