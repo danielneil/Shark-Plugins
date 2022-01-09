@@ -19,7 +19,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=cmd_arg_help)
     parser.add_argument("-t", "--ticker", help="Ticker code of the stock.")
     parser.add_argument("-p", "--periods", help="Number of trading periods for which to compute against.")
-    parser.add_argument("-r", "--raw", nargs='?', const=1, type=int, help="Just print the price minus pretty output.")
     parser.add_argument("-max", "--max", help="Warn if the result is greater than this threshold.")
     parser.add_argument("-min", "--min", help="Warn if the result is less than this threshold.")
     parser.add_argument("-f", "--provider", help="Which provider to the histocal data come from (e.g. yahoo_finance)")
