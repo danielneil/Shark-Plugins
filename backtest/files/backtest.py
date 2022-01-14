@@ -30,7 +30,7 @@ if __name__ == "__main__":
     scriptFile = args.scriptFile 
     backTestFile = args.backTestFile
 
-    process = subprocess.Popen(['/shark/backtests/' + backTestFile, "@" + backTestFile], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+    process = subprocess.Popen(['/shark/backtests/' + backTestFile, "@" + scriptFile], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
 
     stdout, stderr = process.communicate()
 
