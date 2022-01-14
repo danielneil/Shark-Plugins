@@ -62,5 +62,5 @@ if __name__ == "__main__":
         sys.exit(OK)
             
     elif sma >  lastPrice:
-        print("OK - Last price ($" + str(lastPrice) + ") for ticker " + ticker + " is below SMA $" + str(sma))
+        print("WARNING - Last price ($" + str(lastPrice) + ") for ticker " + ticker + " is below SMA $" + str(sma))
         sys.exit(WARNING)      
