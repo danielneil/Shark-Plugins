@@ -10,7 +10,7 @@
     extra_args: --upgrade
     executable: pip3
     
-- name: Install pyalgotrade
-  pip: 
-   name: PyAlgoTrade
-   executable: pip3
+#- name: Install pyalgotrade
+#  pip: 
+#   name: PyAlgoTrade
+#   executable: pip3
