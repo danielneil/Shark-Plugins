@@ -40,9 +40,16 @@ if __name__ == "__main__":
     history_dir = "/shark/historical/"
 
     if args.provider == "yahoo_finance_data":
-        datafile = history_dir + args.provider
+        datafile = history_dir + args.provider + "/" + ticker + ".csv")
         
-    data = pd.read_csv(datafile + "/" + ticker + ".csv")
+    try:
+        f = open(datafile)
+        f.close()
+    except IOError:
+        print("UNKNOWN - Historical data file not accessible - " + str(datafile))
+        sys.exit(UNKNOWN)
+        
+    data = pd.read_csv(datafile)
     
     dataFrame = data['Adj Close']
     
