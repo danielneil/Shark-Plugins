@@ -12,7 +12,6 @@ UNKNOWN      = 3
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
     parser.add_argument("-b", "--backTestFile", help="The name of the file containing the back test code.")
     parser.add_argument("-s", "--scriptFile", help="A script file containing the commands which are used to build the backtest command line arguments.")
     args = parser.parse_args()
