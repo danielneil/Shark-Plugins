@@ -1,11 +1,4 @@
 ---
-# tasks file for backtest
-
-
-
----
-# tasks file for sma
-
 - include: dependencies.yml
 
 - name: Installing plugin - backtest.py
