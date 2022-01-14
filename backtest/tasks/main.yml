@@ -1,10 +1,18 @@
 ---
 # tasks file for backtest
 
+
+
+---
+# tasks file for sma
+
+- include: dependencies.yml
+
 - name: Installing plugin - backtest.py
   copy:
    src: backtest.py
    dest: /usr/lib64/nagios/plugins/
+   mode: '755'
    
 - name: Installing command definition - backtest.py
   copy:
