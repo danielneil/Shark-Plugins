@@ -26,9 +26,9 @@ def is_dir_writable():
         os.remove(directory + ".testfile")
         
     except Exception as e:
-        print("Problem writing to " + directory)
+        print("UNKNOWN - Problem writing to " + directory)
         print(e)
-        sys.exit(CRITICAL) 
+        sys.exit(UNKNOWN) 
 
 
 ############################################################################
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     interval = args.interval
     includeAdjustedClose = args.includeAdjustedClose
     
-    directory = "/shark/historical/yahoo_finance/" 
+    directory = "/shark/historical/yahoo_finance_data/" 
     datafile =  str(ticker) + ".csv"
     filename = directory + datafile
     
