@@ -40,7 +40,7 @@ if __name__ == "__main__":
     history_dir = "/shark/historical/"
 
     if args.provider == "yahoo_finance_data":
-        datafile = history_dir + args.provider + "/" + ticker + ".csv")
+        datafile = history_dir + args.provider + "/" + ticker + ".csv"
         
     try:
         f = open(datafile)
