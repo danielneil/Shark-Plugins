@@ -29,14 +29,6 @@ if __name__ == "__main__":
     if not args.periods:
         print ("UNKNOWN - Periods not supplied")
         sys.exit(UNKNOWN)
-
-    if not args.max:
-        print ("UNKNOWN - Max not supplied")
-        sys.exit(UNKNOWN)
-        
-    if not args.min:
-        print ("UNKNOWN - Min not supplied")
-        sys.exit(UNKNOWN)
    
     if not args.provider:
         print ("UNKNOWN - Data provider not supplied")
