@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-import pandas as pd
-import datetime
 import subprocess
 import os
 import sys
