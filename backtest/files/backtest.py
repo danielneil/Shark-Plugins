@@ -15,16 +15,22 @@ cmd_arg_help = 'This executes the backtest code. For a simple backtest example, 
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=cmd_arg_help)
-    parser.add_argument("-s", "--scriptFile", help="A script file containing the commands which are used to build the backtest command line arguments")
+    parser.add_argument("-b", "--backTestFile", help="The name of the file containing the back test code.")
+    parser.add_argument("-s", "--scriptFile", help="A script file containing the commands which are used to build the backtest command line arguments.")
     args = parser.parse_args()
 
+    if not args.backTestFile:
+        print ("UNKNOWN - No backTestFile specified")
+        sys.exit(UNKNOWN)
+    
     if not args.scriptFile:
         print ("UNKNOWN - No scriptFile specified")
         sys.exit(UNKNOWN)
 
     scriptFile = args.scriptFile 
+    backTestFile = args.backTestFile
 
-    process = subprocess.Popen(['/shark/backtests/bin/' + scriptFile], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+    process = subprocess.Popen(['/shark/backtests/' + backTestFile, "@" + backTestFile], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
 
     stdout, stderr = process.communicate()
 
