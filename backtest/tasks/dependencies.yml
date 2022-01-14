@@ -12,6 +12,5 @@
     
 - name: Install pyalgotrade
   pip: 
-   name: pyalgotrade
-   extra_args: --upgrade
-   executable: pip3   
+   name: PyAlgoTrade
+   executable: pip3
