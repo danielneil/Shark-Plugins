@@ -57,10 +57,10 @@ if __name__ == "__main__":
     
     lastPrice = data['Adj Close'].iloc[-1]
        
-    if lastPrice <  sma:
-        print("CRITICAL - SMA $" + str(sma) + " is above last price $" + str(lastPrice) + " for ticker " + ticker)
-        sys.exit(CRITICAL)
+    if sma <  lastPrice:
+        print("OK - SMA $" + str(sma) + " is less than last price $" + str(lastPrice) + " for ticker " + ticker)
+        sys.exit(OK)
             
-    elif lastPrice >  sma:
-        print("CRITICAL - SMA $" + str(sma) + " is below last price $" + str(lastPrice) + " for ticker " + ticker)
+    elif sma >  lastPrice:
+        print("CRITICAL - SMA $" + str(sma) + " is above last price $" + str(lastPrice) + " for ticker " + ticker)
         sys.exit(WARNING)      
