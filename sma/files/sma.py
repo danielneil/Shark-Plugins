@@ -23,24 +23,24 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if not args.ticker:
-        print ("CRITICAL - No ticker found")
-        sys.exit(CRITICAL)
+        print ("UNKNOWN - No ticker found")
+        sys.exit(UNKNOWN)
 
     if not args.periods:
-        print ("CRITICAL - Periods not supplied")
-        sys.exit(CRITICAL)
+        print ("UNKNOWN - Periods not supplied")
+        sys.exit(UNKNOWN)
 
     if not args.max:
-        print ("CRITICAL - Max not supplied")
-        sys.exit(CRITICAL)
+        print ("UNKNOWN - Max not supplied")
+        sys.exit(UNKNOWN)
         
     if not args.min:
-        print ("CRITICAL - Min not supplied")
-        sys.exit(CRITICAL)
+        print ("UNKNOWN - Min not supplied")
+        sys.exit(UNKNOWN)
    
     if not args.provider:
-        print ("CRITICAL - Data provider not supplied")
-        sys.exit(CRITICAL)
+        print ("UNKNOWN - Data provider not supplied")
+        sys.exit(UNKNOWN)
         
     ticker = args.ticker
     smaPeriod = int(args.periods)
@@ -55,20 +55,13 @@ if __name__ == "__main__":
     dataFrame = data['Adj Close']
     
     sma = np.round(dataFrame.rolling(smaPeriod).mean().iloc[-1], 2)
-
-    if args.raw:
-        print(str(sma))
-        sys.exit(OK)
-        
-    else:
-        
-        if args.max and int(args.max) <  sma:
-            print("WARNING - SMA($" + str(sma) + ") is above threshold " + str(args.max))
-            sys.exit(WARNING)
+    
+    lastPrice = data['Adj Close'].iloc[-1]
+       
+    if lastPrice <  sma:
+        print("WARNING - SMA($" + str(sma) + ") is above threshold " + str(args.max))
+        sys.exit(CRITICAL)
             
-        elif args.min and int(args.min) >  sma:
-            print("WARNING - SMA($" + str(sma) + ") is below threshold " + str(args.min))
-            sys.exit(WARNING)
-            
-        else:
-            print("OK - $" + str(sma))
+    elif lastPrice >  sma:
+        print("WARNING - SMA($" + str(sma) + ") is below threshold " + str(args.min))
+        sys.exit(WARNING)      
