@@ -78,7 +78,7 @@ Handles the execution of customised backtesting code.
 
 <a name="rsi" />
 
-##rsi
+## rsi
 
 Computes the relative strength index (rsi) for the given instrument, with ema or sma.
 
