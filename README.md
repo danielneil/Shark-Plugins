@@ -23,7 +23,7 @@ Obtains historical instrument data from Yahoo! finance and imports it into Shark
 ```
 ## sma
 
-Computes a simple moving average. 
+Computes a moving average - the average value of a certain number of previous periods.
 
 ```
   - name: sma
