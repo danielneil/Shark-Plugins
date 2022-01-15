@@ -1,6 +1,12 @@
+<p align="center">
+  <img src="https://github.com/danielneil/Shark/blob/main/shark/files/shark_ui_patches/logofullsize.png?raw=true">
+</p>
+
 # Shark Plugins
 
 These are the plugins to use with the Shark algorithmic trading platform. 
+
+For more information about Shark, see [here](https://github.com/danielneil/Shark).
 
 ## yahoo_finance_data
 
