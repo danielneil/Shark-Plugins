@@ -35,8 +35,24 @@ if __name__ == "__main__":
         print ("UNKNOWN - Data provider not supplied")
         sys.exit(UNKNOWN)
         
+    if not args.min:
+        print ("UNKNOWN - min not supplied")
+        sys.exit(UNKNOWN)    
+        
+    if not args.max:
+        print ("UNKNOWN - max not supplied")
+        sys.exit(UNKNOWN)    
+        
+    if not args.ma_type:
+        print ("UNKNOWN - ma_type not supplied")
+        sys.exit(UNKNOWN)            
+        
     ticker = args.ticker
-    smaPeriod = int(args.periods)
+    periods = int(args.periods)
+    provider = args.provider
+    min = args.min
+    max = args.max
+    ma_type = args.ma_type
 
     history_dir = "/shark/historical/"
 
@@ -52,16 +68,22 @@ if __name__ == "__main__":
         
     data = pd.read_csv(datafile)
     
-    dataFrame = data['Adj Close']
+    close_delta = data['Adj Close'].diff()
     
-    sma = np.round(dataFrame.rolling(smaPeriod).mean().iloc[-1], 2)
+    # Make two series: one for lower closes and one for higher closes
+    up = close_delta.clip(lower=0)
+    down = -1 * close_delta.clip(upper=0)
     
-    lastPrice = data['Adj Close'].iloc[-1]
-       
-    if sma <  lastPrice:
-        print("OK - Price $" + str(lastPrice) + " is above SMA $" + str(sma))
-        sys.exit(OK)
-            
-    elif sma >  lastPrice:
-        print("WARNING - Price $" + str(lastPrice) + " is below SMA $" + str(sma))
-        sys.exit(WARNING)      
+    if ma_type == "ema":
+	    # Use exponential moving average
+        ma_up = up.ewm(com = periods - 1, adjust=True, min_periods = periods).mean()
+        ma_down = down.ewm(com = periods - 1, adjust=True, min_periods = periods).mean()
+    else:
+        # Use simple moving average
+        ma_up = up.rolling(window = periods, adjust=False).mean()
+        ma_down = down.rolling(window = periods, adjust=False).mean()
+        
+    rsi = ma_up / ma_down
+    rsi = 100 - (100/(1 + rsi))
+    
+    print(str(rsi))
