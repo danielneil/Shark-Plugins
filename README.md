@@ -45,7 +45,7 @@ Computes an exponential moving average - a moving average that gives more weight
 ```
 ## backtest
 
-Runs custom backtest code. 
+Handles the execution of customised backtesting code. 
 
 ```
   - name: backtest
