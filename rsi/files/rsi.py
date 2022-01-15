@@ -12,15 +12,21 @@ WARNING      = 1
 CRITICAL     = 2
 UNKNOWN      = 3
 
-cmd_arg_help = "This plugin checks the simple moving average (SMA) for a stock. Alerts Green (OK) if the share price is above the SMA, Yellow(Warning) if its below"
-
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description=cmd_arg_help)
+    parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--ticker", help="Ticker code of the stock.")
     parser.add_argument("-p", "--periods", help="Number of trading periods for which to compute against.")
     parser.add_argument("-f", "--provider", help="Which provider to the histocal data come from (e.g. yahoo_finance)")
     args = parser.parse_args()
+    
+     - name: rsi
+   desc: "RSI: 2 Period with EMA"
+   group: "RSI" 
+   periods: 2
+   max: 90
+   min: 10
+   data_format: yahoo_finance_data
 
     if not args.ticker:
         print ("UNKNOWN - No ticker found")
