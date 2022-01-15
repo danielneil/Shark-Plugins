@@ -80,8 +80,8 @@ if __name__ == "__main__":
         ma_down = down.ewm(com = periods - 1, adjust=True, min_periods = periods).mean()
     else:
         # Use simple moving average
-        ma_up = up.rolling(window = periods, adjust=False).mean()
-        ma_down = down.rolling(window = periods, adjust=False).mean()
+        ma_up = up.rolling(periods).mean()
+        ma_down = down.rolling(periods).mean()
         
     rsi = ma_up / ma_down
     rsi = 100 - (100/(1 + rsi))
