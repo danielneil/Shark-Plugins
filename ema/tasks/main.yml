@@ -9,7 +9,7 @@
    dest: /usr/lib64/nagios/plugins/
    mode: '755'
    
-- name: Installing command definition - ema.py
+- name: Installing command definition - ema.cfg
   copy:
    src: ema.cfg
    dest: /usr/local/nagios/etc/conf.d/
