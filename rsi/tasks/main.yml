@@ -1,0 +1,15 @@
+---
+# tasks file for sma
+
+- include: dependencies.yml
+
+- name: Installing plugin - rsi.py
+  copy:
+   src: rsi.py
+   dest: /usr/lib64/nagios/plugins/
+   mode: '755'
+   
+- name: Installing command definition - rsi.py
+  copy:
+   src: rsi.cfg
+   dest: /usr/local/nagios/etc/conf.d/

@@ -13,6 +13,7 @@ For more information about Shark, see [here](https://github.com/danielneil/Shark
 [sma](#sma)  
 [ema](#ema)  
 [backtest](#backtest)  
+[rsi](#rsi)
 
 <a name="yahoo_finance_data"/>
 
@@ -73,4 +74,20 @@ Handles the execution of customised backtesting code.
     capital: 1000000
     data_format: yahoo_finance_data
     period: 50
+```
+
+<a name="rsi" />
+
+##rsi
+
+Computes the relative strength index (rsi) for the given instrument, with ema or sma.
+
+```
+ - name: rsi
+   desc: "RSI: 2 Period with EMA"
+   group: "RSI" 
+   periods: 2
+   max: 90
+   min: 10
+   data_format: yahoo_finance_data
 ```
