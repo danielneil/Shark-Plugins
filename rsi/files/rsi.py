@@ -85,5 +85,6 @@ if __name__ == "__main__":
         
     rsi = ma_up / ma_down
     rsi = 100 - (100/(1 + rsi))
+
+    print(rsi.iloc[-1])
     
-    print(str(rsi))
