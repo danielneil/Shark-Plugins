@@ -1,9 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.9
 
 import subprocess
 import os
 import sys
 import argparse
+import string
 
 OK           = 0
 WARNING      = 1
@@ -22,20 +23,16 @@ if __name__ == "__main__":
     if not args.backTestFile:
         print ("UNKNOWN - No backTestFile specified")
         sys.exit(UNKNOWN)
-    
+
     if not args.scriptFile:
         print ("UNKNOWN - No scriptFile specified")
         sys.exit(UNKNOWN)
 
-    scriptFile = args.scriptFile 
+    scriptFile = args.scriptFile
     backTestFile = args.backTestFile
 
-    process = subprocess.Popen(['/shark/backtests/' + backTestFile, "@" + scriptFile], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+    result  = subprocess.run(['/shark/backtests/' + backTestFile, "@" + scriptFile], capture_output=True, text=True)
 
-    stdout, stderr = process.communicate()
+    print(result.stdout + " " + result.stderr)
 
-    exitcode = process.wait()
-
-    print(stdout + stderr)
-
-    sys.exit(exitcode)
+    sys.exit(result.returncode)
