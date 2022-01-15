@@ -32,6 +32,17 @@ Computes a moving average - the average value of a certain number of previous pe
     period: 50
     data_format: yahoo_finance_data
 ```
+## ema
+
+Computes an exponential moving average - a moving average that gives more weight to recent observations
+
+```
+  - name: ema
+    desc: "Exponential Moving Average - 50 Days"
+    group: "EMA: [ 50 Day ]"
+    period: 50
+    data_format: yahoo_finance_data
+```
 ## backtest
 
 Runs custom backtest code. 
