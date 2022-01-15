@@ -35,7 +35,7 @@ Obtains historical instrument data from Yahoo! finance and imports it into Shark
 
 ## sma
 
-Computes a moving average - the average value of a certain number of previous periods.
+Computes a simple moving average (sma) - the average value of a certain number of previous periods.
 
 ```
   - name: sma
@@ -49,7 +49,7 @@ Computes a moving average - the average value of a certain number of previous pe
 
 ## ema
 
-Computes an exponential moving average - a moving average that gives more weight to recent observations
+Computes an exponential moving average (ema) - a moving average that gives more weight to recent observations
 
 ```
   - name: ema
@@ -80,7 +80,7 @@ Handles the execution of customised backtesting code.
 
 ## rsi
 
-Computes the relative strength index (rsi) for the given instrument, with ema or sma.
+Computes the relative strength index (rsi) for the given instrument, with ema or sma moving average parameter.
 
 ```
  - name: rsi
@@ -89,5 +89,6 @@ Computes the relative strength index (rsi) for the given instrument, with ema or
    periods: 14
    max: 70
    min: 30
+   ma_type: ema
    data_format: yahoo_finance_data
 ```
