@@ -17,17 +17,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--ticker", help="Ticker code of the stock.")
     parser.add_argument("-p", "--periods", help="Number of trading periods for which to compute against.")
+    parser.add_argument("-m", "--min", help="The min threshold which will alert if reached.")
+    parser.add_argument("-x", "--max", help="The max threshold which will alert if reached.")
+    parser.add_argument("-y", "--ma_type", help="If ema or sma will be used when computing the rsi.")
     parser.add_argument("-f", "--provider", help="Which provider to the histocal data come from (e.g. yahoo_finance)")
     args = parser.parse_args()
-    
-     - name: rsi
-   desc: "RSI: 2 Period with EMA"
-   group: "RSI" 
-   periods: 2
-   max: 90
-   min: 10
-   data_format: yahoo_finance_data
-
+   
     if not args.ticker:
         print ("UNKNOWN - No ticker found")
         sys.exit(UNKNOWN)
