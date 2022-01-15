@@ -26,5 +26,14 @@ Obtains historical instrument data from Yahoo! finance and imports it into Shark
     data_format: yahoo_finance_data
 ```
 ## backtest
-
+```
+  - name: backtest
+    desc: "BACKTEST: [ Moving Averages ]"
+    group: "Backtesting"
+    file: backtest_moving_averages.py
+    shares: 1000
+    capital: 1000000
+    data_format: yahoo_finance_data
+    period: 50
+```
 ## strategy
