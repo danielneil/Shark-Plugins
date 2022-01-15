@@ -86,8 +86,8 @@ Computes the relative strength index (rsi) for the given instrument, with ema or
  - name: rsi
    desc: "RSI: 2 Period with EMA"
    group: "RSI" 
-   periods: 2
-   max: 90
-   min: 10
+   periods: 14
+   max: 70
+   min: 30
    data_format: yahoo_finance_data
 ```
