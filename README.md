@@ -8,7 +8,7 @@ These are the plugins to use with the Shark algorithmic trading platform.
 
 For more information about Shark, see [here](https://github.com/danielneil/Shark).
 
-### Table of Contents  
+### List
 [yahoo_finance_data](#yahoo_finance_data)  
 [sma](#sma)  
 [ema](#ema)  
