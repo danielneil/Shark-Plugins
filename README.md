@@ -6,7 +6,7 @@ These are the plugins to use with the Shark algorithmic trading platform.
 
 Obtains historical instrument data from Yahoo! finance and imports it into Shark.
 
-### Sample Use Case
+#### Sample
 ```
   - name: yahoo_finance_data
     desc: "Yahoo Finance [ BTC-USD Historical Data File ]"
@@ -17,15 +17,22 @@ Obtains historical instrument data from Yahoo! finance and imports it into Shark
     includeAdjustedClose: true
 ```
 ## sma
+
+Computes a simple moving average. 
+
+#### Sample
 ```
   - name: sma
     desc: "Simple Moving Average - 50 Days"
     group: "SMA: [ 50 Day ]"
-    ticker: BTC-USD
     period: 50
     data_format: yahoo_finance_data
 ```
 ## backtest
+
+Runs custom backtest code. 
+
+#### Sample
 ```
   - name: backtest
     desc: "BACKTEST: [ Moving Averages ]"
@@ -36,4 +43,3 @@ Obtains historical instrument data from Yahoo! finance and imports it into Shark
     data_format: yahoo_finance_data
     period: 50
 ```
-## strategy
