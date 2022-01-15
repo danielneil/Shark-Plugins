@@ -8,6 +8,12 @@ These are the plugins to use with the Shark algorithmic trading platform.
 
 For more information about Shark, see [here](https://github.com/danielneil/Shark).
 
+##### Table of Contents  
+[yahoo_finance_data](#yahoo_finance_data)  
+[Emphasis](#emphasis)  
+
+
+<a name="yahoo_finance_data"/>
 ## yahoo_finance_data
 
 Obtains historical instrument data from Yahoo! finance and imports it into Shark.
