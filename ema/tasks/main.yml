@@ -1,0 +1,15 @@
+---
+# tasks file for ema
+
+- include: dependencies.yml
+
+- name: Installing plugin - ema.py
+  copy:
+   src: ema.py
+   dest: /usr/lib64/nagios/plugins/
+   mode: '755'
+   
+- name: Installing command definition - ema.py
+  copy:
+   src: ema.cfg
+   dest: /usr/local/nagios/etc/conf.d/
