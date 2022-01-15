@@ -46,7 +46,7 @@ if __name__ == "__main__":
         f = open(datafile)
         f.close()
     except IOError:
-        print("UNKNOWN - Historical data file not accessible - " + str(datafile))
+        print("UNKNOWN - Waiting for historical data file - " + str(datafile))
         sys.exit(UNKNOWN)
         
     data = pd.read_csv(datafile)
