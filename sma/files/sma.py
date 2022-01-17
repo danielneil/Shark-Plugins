@@ -53,7 +53,7 @@ if __name__ == "__main__":
     
     dataFrame = data['Adj Close']
     
-    sma = np.round(dataFrame.rolling(smaPeriod).mean().iloc[-1], 2).round(decimals=2)
+    sma = np.round(dataFrame.rolling(smaPeriod).mean().iloc[-1].round(decimals=2), 2)
     
     lastPrice = data['Adj Close'].iloc[-1].round(decimals=2)
        
