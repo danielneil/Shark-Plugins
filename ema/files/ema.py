@@ -51,9 +51,9 @@ if __name__ == "__main__":
     
     dataFrame = data['Adj Close']
     
-    ema = np.round(dataFrame.ewm(emaPeriod).mean().iloc[-1], 2)
+    ema = np.round(dataFrame.ewm(emaPeriod).mean().iloc[-1], 2).round(decimals=2)
     
-    lastPrice = data['Adj Close'].iloc[-1]
+    lastPrice = data['Adj Close'].iloc[-1].round(decimals=2)
        
     if ema <  lastPrice:
         print("OK - Price $" + str(lastPrice) + " is above SMA $" + str(ema))
