@@ -61,4 +61,4 @@ if __name__ == "__main__":
             
     elif ema >  lastPrice:
         print("WARNING - Price $" + str(lastPrice) + " is below SMA $" + str(ema))
-        sys.exit(WARNING)      
+        sys.exit(CRITICAL)      
