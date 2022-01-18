@@ -5,6 +5,10 @@
   strategy: free
   become: true
 
+  vars:
+   nagios_plugins_dir: "/usr/lib64/nagios/plugins/"
+   nagios_conf_d: "/usr/local/nagios/etc/conf.d/"
+
   roles:
   - sma
   - ema
