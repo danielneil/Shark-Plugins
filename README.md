@@ -10,7 +10,7 @@ For more information about Shark, see [here](https://github.com/danielneil/Shark
 
 ## Contents
 [yahoo_finance_data](#yahoo_finance_data)  
-[sma](#sma) 
+[sma](#sma)  
 [ema](#ema)  
 [backtest](#backtest)  
 [rsi](#rsi)  
