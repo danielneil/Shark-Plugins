@@ -9,10 +9,10 @@ These are the plugins to use with the Shark algorithmic trading platform.
 For more information about Shark, see [here](https://github.com/danielneil/Shark).
 
 ## Contents
-[yahoo_finance_data](#yahoo_finance_data)  
+[yahoo_finance_data](#yahoo_finance_data)
 [sma](#sma)  
-[ema](#ema)  
-[backtest](#backtest)  
+[ema](#ema)
+[backtest](#backtest)
 [rsi](#rsi)
 [correlation](#correlation)
 
