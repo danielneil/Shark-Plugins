@@ -1,5 +1,11 @@
 ---
-- name: Installing name 
+- name: Installing python3
   package:
-   name: 
+   name: python3
    state: latest
+
+- name: Install and upgrade pandas
+  pip:
+    name: pandas
+    extra_args: --upgrade
+    executable: pip3
