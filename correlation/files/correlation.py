@@ -66,4 +66,15 @@ if __name__ == "__main__":
 
     correlation = dataFrame1.corr(dataFrame2)
 
-    print (correlation)
+    corr_abs = abs(correlation)
+
+    exitcode = OK
+
+    if corr_abs > .5:
+        print("CRITICAL - Strong correlation of " + str(correlation))
+        exitcode = CRITICAL
+    else:
+        print("OK - Weak correlation of " + str(correlation))
+
+
+    sys.exit(exitcode)
