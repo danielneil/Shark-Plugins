@@ -93,3 +93,18 @@ Computes the relative strength index (rsi) for the given instrument, with ema or
    ma_type: ema
    data_format: yahoo_finance_data
 ```
+
+<a name="correlation" />
+
+## correlation
+
+ checks the correlation between two instrumenets.
+
+```
+ - name: correlation
+   desc: "Negative Correlation Check"
+   group: "Correlation" 
+   ticker1: ADA-USD
+   ticker2: BTC-USD
+   data_format: yahoo_finance_data
+```
