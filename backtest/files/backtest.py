@@ -31,7 +31,7 @@ if __name__ == "__main__":
     scriptFile = args.scriptFile
     backTestFile = args.backTestFile
 
-    result  = subprocess.run(['/shark/backtests/' + backTestFile, "@" + scriptFile], capture_output=True, text=True)
+    result  = subprocess.run(['/shark-web/backtests/' + backTestFile, "@" + scriptFile], capture_output=True, text=True)
 
     print(result.stdout + " " + result.stderr)
 
