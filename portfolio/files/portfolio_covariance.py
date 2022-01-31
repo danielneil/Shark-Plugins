@@ -63,7 +63,7 @@ if __name__ == "__main__":
 
     plt.figure(figsize=(15,10))
 
-    sn.heatmap(covMatrix, annot=True)
+    sn.heatmap(covMatrix, annot=True, fmt='g')
 
     plt.savefig('/shark/portfolio/covariance_matrix.png')
 
