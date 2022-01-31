@@ -120,7 +120,7 @@ It is not used in the same way as other plugins, and is included in every instan
 
 It comprises of the following capabilities:
 
-### Correlation Matrix 
+### Correlation 
 
 The correlation matrix shows what instruments rise and fall together or which instruments rise when others fall. It is derived from the underlying covariance matrix of asset returns, which is used to calculate portfolio risk or volatility.
 
@@ -129,4 +129,6 @@ It is only constructed against the historical datasets at the present.
 <p align="center">
   <img src="https://github.com/danielneil/Shark-Plugins/blob/main/screenshots/screenshot_shark_correlation_matrix.png?raw=true">
 </p>
+
+### Covariance 
 
