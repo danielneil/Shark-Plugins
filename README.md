@@ -15,6 +15,7 @@ For more information about Shark, see [here](https://github.com/danielneil/Shark
 [backtest](#backtest)  
 [rsi](#rsi)  
 [correlation](#correlation)  
+[portfolio](#portfolio)
 
 <a name="yahoo_finance_data"/>
 
@@ -108,3 +109,19 @@ Computes the relative strength index (rsi) for the given instrument, with ema or
    ticker2: BTC-USD
    data_format: yahoo_finance_data
 ```
+
+<a name="sma"/>
+
+## portfolio
+
+The portfolio plugin provides computations in relation specific portfolio measurements.
+
+It is not used in the same way as other plugins, and is included in every instance of Shark. 
+
+It comprises of the following capabilities:
+
+### Correlation Matrix 
+
+The correlation matrix shows what instruments rise and fall together or which instruments rise when others fall. It is derived from the underlying covariance matrix of asset returns, which is used to calculate portfolio risk or volatility.
+
+It is only constructed against the historical datasets at the present.  
