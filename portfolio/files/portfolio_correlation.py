@@ -64,8 +64,9 @@ if __name__ == "__main__":
 
     plt.figure(figsize=(15,10))
 
-    sn.heatmap(corrMatrix, annot=True)
+    sn.heatmap(corrMatrix, annot=True).set(title='Correlation Matrix')
 
     plt.savefig('/shark/portfolio/correlation_matrix.png')
+    
 
     sys.exit(0)
