@@ -1,0 +1,15 @@
+---
+# tasks file for --
+
+- include: dependencies.yml
+
+- name: Installing plugin - {{ plugin_name }}
+  copy:
+   src: "{{ plugin_name }}.py"
+   dest: "{{ nagios_plugins_dir }}"
+   mode: '755'
+   
+- name: Installing command definition - {{ plugin_name }}
+  copy:
+   src: "{{ plugin_name }}.cfg"
+   dest: "{{ nagios_conf_d }}"
