@@ -9,3 +9,9 @@
     name: pandas
     extra_args: --upgrade
     executable: pip3
+
+- name: Install and upgrade seaborn
+  pip:
+    name: seaborn
+    extra_args: --upgrade
+    executable: pip3
