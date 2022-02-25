@@ -23,6 +23,8 @@ For more information about Shark, see [here](https://github.com/danielneil/Shark
 
 Obtains historical instrument data from Yahoo! finance and imports it into Shark.
 
+This plugin is for demo use only, as a limitation it has is only the close price is listed in the historical datasets (no intraday). 
+
 ```
   - name: yahoo_finance_data
     desc: "Yahoo Finance [ BTC-USD Historical Data File ]"
