@@ -33,7 +33,7 @@ if __name__ == "__main__":
     backTestFile = args.backTestFile
 
     if not path.isfile(backTestFile): 
-        print ("UNKNOWN - Probably still waiting for the historic data file, exiting...")
+        print ("UNKNOWN - Probably still waiting for the historic data file to download, exiting...")
         sys.exit(UNKNOWN)
     
     if not path.isfile(scriptFile): 
