@@ -32,7 +32,7 @@ if __name__ == "__main__":
     scriptFile = args.scriptFile
     backTestFile = args.backTestFile
 
-    if not path.isfile(backTestFile): 
+    if not path.isfile("/shark/historical/yahoo_finance_data/" + backTestFile): 
         print ("UNKNOWN - Probably still waiting for the historic data file to download, exiting...")
         sys.exit(UNKNOWN)
     
