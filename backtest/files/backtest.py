@@ -11,7 +11,7 @@ WARNING      = 1
 CRITICAL     = 2
 UNKNOWN      = 3
 
-cmd_arg_help = 'This executes the backtest code. For a simple backtest example, see the template'
+cmd_arg_help = 'This executes the backtest code. For a simple backtest example, see the template.'
 
 if __name__ == "__main__":
 
