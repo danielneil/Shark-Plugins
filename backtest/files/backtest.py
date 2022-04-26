@@ -1,7 +1,8 @@
 #!/usr/bin/python3.9
 
 import subprocess
-import os
+import os.path
+from os import path
 import sys
 import argparse
 import string
@@ -27,10 +28,18 @@ if __name__ == "__main__":
     if not args.scriptFile:
         print ("UNKNOWN - No scriptFile specified")
         sys.exit(UNKNOWN)
-
+        
     scriptFile = args.scriptFile
     backTestFile = args.backTestFile
 
+    if not path.isfile(backTestFile): 
+        print ("UNKNOWN - Probably still waiting for the historic data file, exiting...")
+        sys.exit(UNKNOWN)
+    
+    if not path.isfile(scriptFile): 
+        print ("UNKNOWN - Backtest script file ("+scriptFile+") not found, exiting...")
+        sys.exit(UNKNOWN)
+    
     result  = subprocess.run(['/shark/backtests/' + backTestFile, "@" + scriptFile], capture_output=True, text=True)
 
     print(result.stdout + " " + result.stderr)
