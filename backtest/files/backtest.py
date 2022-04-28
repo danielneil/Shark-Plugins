@@ -31,14 +31,6 @@ if __name__ == "__main__":
         
     scriptFile = args.scriptFile
     backTestFile = args.backTestFile
-
-    if not path.isfile("/shark/historical/yahoo_finance_data/" + backTestFile): 
-        print ("UNKNOWN - Probably still waiting for the historic data file to download, exiting...")
-        sys.exit(UNKNOWN)
-    
-    if not path.isfile(scriptFile): 
-        print ("UNKNOWN - Backtest script file ("+scriptFile+") not found, exiting...")
-        sys.exit(UNKNOWN)
     
     result  = subprocess.run(['/shark/backtests/' + backTestFile, "@" + scriptFile], capture_output=True, text=True)
 
